@@ -1,3 +1,4 @@
+<!-- 7 POSSIBLE HTML/ HANDLEBARS FILE TO GENERATE-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,9 +8,30 @@
   <title>Tech Blog</title>
   <link rel="stylesheet" href="/css/jass.css">
 </head>
-
 <body>
+  <header>
+    <nav>
+      <button class="btn" id="homeBtn">Home</button>
+      <button class="btn" id="dashBtn">Dashboard</button>
+      {{#if logged_out}}
+      <button class="btn" id="loginBtn">Login</button>
+      {{else}}
+      <button class="btn" id="logoutBtn">Logout</button>
+      {{/if}}
+    </nav>
+    <h1>Tech Blog</h1>
+  </header>
+  <main>
 {{{body}}}
+  </main>
 </body>
+
+<footer>
+
+</footer>
+
+  {{#if logged_in}}
+  <script src="/Tech-Blog/public/js/logout.js"></script>
+  {{/if}}
 
 </html>
