@@ -1,4 +1,4 @@
-<!-- 7 POSSIBLE HTML/ HANDLEBARS FILE TO GENERATE-->
+<!-- 7 POSSIBLE HANDLEBARS FILE TO GENERATE-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,16 +10,21 @@
 </head>
 <body>
   <header>
-    <nav>
-      <button class="btn" id="homeBtn">Home</button>
-      <button class="btn" id="dashBtn">Dashboard</button>
-      {{#if logged_out}}
-      <button class="btn" id="loginBtn">Login</button>
-      {{else}}
-      <button class="btn" id="logoutBtn">Logout</button>
-      {{/if}}
-    </nav>
-    <h1>Tech Blog</h1>
+    <div>
+      <nav>
+        <a class="btn" id="homeBtn">Home</a>
+        <a class="btn" id="dashBtn">Dashboard</a>
+        {{#if logged_out}}
+        <a class="btn" id="signUpBtn" href="/signup">Login</a>
+        <a class="btn" id="loginBtn" href="/login">Login</a>
+        {{else}}
+        <a class="btn" id="logoutBtn" href="/">Logout</a>
+        {{/if}}
+      </nav>
+    </div>
+    <div>
+      <h1>Tech Blog</h1>
+    </div>
   </header>
   <main>
 {{{body}}}
@@ -31,7 +36,7 @@
 </footer>
 
   {{#if logged_in}}
-  <script src="../../public/js/logout.js"></script>
+  <script src="/public/js/logout.js"></script>
   {{/if}}
 
 </html>

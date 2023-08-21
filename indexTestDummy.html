@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="/css/jass.css">
+</head>
+<body>
+
+    <section>
+        {{#each userPosts as |post|}}
+        <diV class="posts">
+            <div>
+                <h2>{{title}}</h2>
+            </div>
+            <div>
+                <a>Posted by {{User.name}}</a>
+            </div>
+        </diV>
+        <div>
+            <p>{{content}}</p>
+        </div>
+    </section>
+
+</body>
+
+<footer>
+
+</footer>
+</html>
