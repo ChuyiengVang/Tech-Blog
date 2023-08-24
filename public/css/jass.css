@@ -1,0 +1,57 @@
+* {
+
+    box-sizing: border-box;
+
+}
+
+header {
+
+    background-color: brown;
+
+}
+
+.navBtn {
+
+    font-size: 25px;
+
+}
+
+.posts {
+
+    display: flex;
+    flex-direction: column;
+    background-color: tan;
+    height: 200px;
+    width: 700px;
+
+}
+
+.postInfo {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.userPosts {
+
+    display: flex;
+    flex-direction: column;
+    background-color: tan;
+    height: 100px;
+    width: 600px;
+
+}
+
+.userPostData {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.botBtn {
+
+    display: flex;
+    justify-content: center;
+
+}

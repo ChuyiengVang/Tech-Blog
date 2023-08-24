@@ -1,19 +1,16 @@
-{{#each userPosts as |post|}}
-<section>
-    <div class="posts">
-      <div>
-        <div>
-          <h2>{{title}}</h2>
-        </div>
-        <div>
-            <a>Posted by {{user.name}}</a>
-        </div>
-        <div>
-            <p>
-                {{content}}
-            </p>
-        </div>
-      </div>
-    </div>
-</section>
-{{/each}}
+  <!-- home page handlbars-->
+  <section>
+    {{#each userPosts as |post|}}
+      <a class="posts" href="/post/{{id}}">
+          <div class="postInfo">
+            <h2>{{title}}</h2>
+            <h2>Posted by {{user.username}}</h2>
+          </div>
+          <div>
+              <p>
+                  {{content}}
+              </p>
+          </div>
+      </a>
+      {{/each}}
+  </section>

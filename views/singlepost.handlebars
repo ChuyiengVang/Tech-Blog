@@ -1,0 +1,36 @@
+<!-- singlepost Handlebars-->
+<section>
+    <div class="posts">
+      <div class="postInfo">
+        <h2>{{title}}</h2>
+        <h2>Posted by {{user.username}}</h2>
+      </div>
+        <div>
+            <p>
+                {{content}}
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Comment section a partial???-->
+<section>
+    <div>
+        <div>
+            <h4>Comment</h4>
+        </div>
+        <div>
+            <p>{{comment.user_comment}}</p>
+        </div>
+    </div>
+</section>
+<section>
+    <form>
+        <div>
+            <h4>Comment</h4>
+        </div>
+        <div>
+            <input type="text">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</section>

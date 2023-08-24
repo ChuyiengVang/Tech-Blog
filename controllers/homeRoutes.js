@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment} = require('../models');
+const withAuth = require('../utils/auth')
 
 // Render Post/Comments and Posts/Comments
 
@@ -10,7 +11,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
+                    attributes: ['username']
                 }
             ],
         });
@@ -19,7 +20,7 @@ router.get('/', async (req, res) => {
         
         res.render('homepage', {
             userPosts,
-            loggedIn: req.session.loggedIn,
+            logged_in: req.session.logged_in,
         })
     } catch (err) {
         res.status(404).json(err);
@@ -27,22 +28,22 @@ router.get('/', async (req, res) => {
     
 });
 
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
 
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
+                    attributes: ['username']
                 }
             ]
         });
 
-        const posts = postData.get({ plain: true });
+        const userPost = postData.get({ plain: true });
 
         res.render('homepage', {
-        ...posts,
+        ...userPost,
         logged_in: req.session.logged_in
         })
     } catch (err) {
@@ -51,10 +52,10 @@ router.get('/post/:id', async (req, res) => {
 
 });
 
-router.get('login', (req,res) => {
+router.get('/login', (req,res) => {
 
     if (req.session.logged_in) {
-        res.redirect('/');
+        res.redirect('dashboard');
         return;
     }
     res.render('login');

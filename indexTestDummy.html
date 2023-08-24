@@ -1,3 +1,4 @@
+<!-- 7 POSSIBLE HANDLEBARS FILE TO GENERATE-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,28 +6,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="./public/css/jass.css">
 </head>
 <body>
+  <header>
+    <div>
+      <nav>
+        <a class ="navBtn" id="homeBtn" href="/">Home</a>
+        <a class ="navBtn" id="dashBtn" href="#">Dashboard</a>
+        {{#if logged_out}}
+        <a class ="navBtn" id="signUpBtn" href="/signup">Sign Up</a>
+        <a class ="navBtn" id="loginBtn" href="/login">Login</a>
+        {{else}}
+        <a class ="navBtn" id="logoutBtn" href="/">Logout</a>
+        {{/if}}
+      </nav>
+    </div>
+    <div>
+      <h1>Tech Blog</h1>
+    </div>
+  </header>
 
-    <section>
-        {{#each userPosts as |post|}}
-        <diV class="posts">
-            <div>
-                <h2>{{title}}</h2>
-            </div>
-            <div>
-                <a>Posted by {{User.name}}</a>
-            </div>
-        </diV>
+  <section>
+    <div class="posts">
+      <div>
         <div>
-            <p>{{content}}</p>
+          <h2>{{title}}</h2>
         </div>
-    </section>
+        <div>
+            <a>Posted by {{user.name}}</a>
+        </div>
+        <div>
+            <p>
+                {{content}}
+            </p>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- Comment section a partial???-->
+<section>
+    <div>
+        <div>
+            <h4>Comment</h4>
+        </div>
+        <div>
+            <p>{{comment.user_comment}}</p>
+        </div>
+    </div>
+</section>
+<section>
+    <form>
+        <div>
+            <h4>Comment</h4>
+        </div>
+        <div>
+            <input type="text">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</section>
 
 </body>
-
 <footer>
-
 </footer>
+
+  {{#if logged_in}}
+  <script src="/public/js/logout.js"></script>
+  {{/if}}
+
 </html>

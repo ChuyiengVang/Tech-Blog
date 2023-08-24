@@ -12,13 +12,12 @@
   <header>
     <div>
       <nav>
-        <a class="btn" id="homeBtn">Home</a>
+        <a class="btn" id="homeBtn" href="/">Home</a>
         <a class="btn" id="dashBtn">Dashboard</a>
-        {{#if logged_out}}
-        <a class="btn" id="signUpBtn" href="/signup">Login</a>
-        <a class="btn" id="loginBtn" href="/login">Login</a>
-        {{else}}
+        {{#if logged_in}}
         <a class="btn" id="logoutBtn" href="/">Logout</a>
+        {{else}}
+         <a class="btn" id="loginBtn" href="/login">Login</a>
         {{/if}}
       </nav>
     </div>
@@ -30,10 +29,6 @@
 {{{body}}}
   </main>
 </body>
-
-<footer>
-
-</footer>
 
   {{#if logged_in}}
   <script src="/public/js/logout.js"></script>
