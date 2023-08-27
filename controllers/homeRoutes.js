@@ -12,6 +12,9 @@ router.get('/', async (req, res) => {
                 {
                     model: User,
                     attributes: ['username']
+                },
+                {
+                    model: Comment,
                 }
             ],
         });
@@ -36,13 +39,16 @@ router.get('/post/:id', withAuth, async (req, res) => {
                 {
                     model: User,
                     attributes: ['username']
+                },
+                {
+                    model: Comment,
                 }
             ]
         });
 
         const userPost = postData.get({ plain: true });
 
-        res.render('homepage', {
+        res.render('singlepost', {
         ...userPost,
         logged_in: req.session.logged_in
         })
