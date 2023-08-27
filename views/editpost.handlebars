@@ -1,12 +1,12 @@
 <!-- edit post handlbars-->
 <h3>Edit Post</h3>
-<!-- Find correct post, insert {{}} into label??-->
+<!-- Find correct post, insert into label??-->
 <section>
     <form>
         <label for="createTitle">Title</label>
-        <input type="text" name="createTitle">
+        <input type="text" name="createTitle" value="{{userPost.title}}">
         <label for="createContent">Content</label>
-        <input type="text" name="createContent">
+        <input type="text" name="createContent" value="{{userPost.content}}">
         <button type="submit">Update Post</button>
         <button type="submit">Delete</button>
     </form>
