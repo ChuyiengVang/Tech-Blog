@@ -14,23 +14,16 @@
 </section>
 <!-- Comment section a partial???-->
 <section>
-    <div>
-        <div>
-            <h4>Comment</h4>
-        </div>
-        <div>
-            <p>{{comment.user_comment}}</p>
-        </div>
-    </div>
+    {{#each comments}}
+        {{>comment-details}}
+    {{/each}}
 </section>
 <section>
-    <form>
-        <div>
-            <h4>Comment</h4>
-        </div>
-        <div>
-            <input type="text">
-        </div>
+    <form class="commentForm">
+            <label for="newComment" dataId="{{id}}" id="commId">Comment Entry</label>
+            <input type="text" name="comment" id="newComment">
         <button type="submit">Submit</button>
     </form>
 </section>
+
+<section src="/js/comment.js"></section>

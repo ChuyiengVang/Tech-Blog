@@ -2,12 +2,16 @@
 <h3>Edit Post</h3>
 <!-- Find correct post, insert into label??-->
 <section>
-    <form>
-        <label for="createTitle">Title</label>
-        <input type="text" name="createTitle" value="{{userPost.title}}">
-        <label for="createContent">Content</label>
-        <input type="text" name="createContent" value="{{userPost.content}}">
-        <button type="submit">Update Post</button>
-        <button type="submit">Delete</button>
+    <form class="editForm">
+        <div id="findId" dataId="{{userPost.id}}"></div>
+        <label for="editPTitle">Title</label>
+        <input type="text" name="Title" id="editPTitle" value="{{userPost.title}}">
+        <label for="editPContent">Content</label>
+        <input type="text" name="Content" id="editPContent" value="{{userPost.content}}">
+        <button id="updateBtn" type="submit">Update Post</button>
+        <button id="deleteBtn" type="submit">Delete</button>
     </form>
 </section>
+
+<script src="/js/edit.js"></script>
+<script src="/js/delete.js"></script>

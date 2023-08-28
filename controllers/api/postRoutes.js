@@ -9,8 +9,8 @@ router.get('/', async (req,res) => {
     try{ 
         const postData = await Post.findAll({
             include : [{model: User}, {model: Comment}],
-    });
-    res.status(200).json(postData);
+        });
+      res.status(200).json(postData);
     } catch  (err) {
       res.status(404).json(err);
     }
@@ -28,7 +28,6 @@ router.post('/', async (req, res) => {
     });
 
     res.status(200).json(postData);
-
   } catch (err) {
     res.status(400).json(err);
   }
@@ -40,7 +39,11 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
 
   try {
-    const postData = await Post.update(req.body, {
+    const postData = await Post.update({
+      title: req.body.title,
+      content: req.body.content,
+    },
+      {
       where: {
         id: req.params.id,
       },
@@ -61,7 +64,6 @@ router.delete('/:id', async (req, res) => {
     const postData = await Post.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
