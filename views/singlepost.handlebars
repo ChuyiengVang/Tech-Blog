@@ -1,29 +1,28 @@
 <!-- singlepost Handlebars-->
 <section class="postSection">
-    <div class="posts">
-      <div class="postInfo">
-        <h2>{{title}}</h2>
-        <h2>Posted by {{user.username}}</h2>
-      </div>
-        <div>
-            <p class="postContent">
-                {{content}}
-            </p>
-        </div>
+  <div class="posts">
+    <div class="postInfo">
+      <h2>{{title}}</h2>
+      <h2>Posted by {{user.username}}</h2>
     </div>
+    <div>
+      <p class="postContent">
+        {{content}}
+      </p>
+    </div>
+  </div>
 </section>
-<!-- Comment section a partial???-->
 <section class="postSection">
-    {{#each comments}}
-        {{>comment-details}}
-    {{/each}}
+  {{#each comments}}
+    {{>comment-details}}
+  {{/each}}
 </section>
 <section class="userCommentSec">
-    <form class="commentForm">
-            <label for="newComment" dataId="{{id}}" id="commId">Comment Entry</label>
-            <textarea  name="comment" id="newComment"></textarea>
-        <button type="submit" id="commentBtn">Submit</button>
-    </form>
+  <form class="commentForm">
+    <label for="newComment" dataId="{{id}}" id="commId">Comment Entry</label>
+    <textarea  name="comment" id="newComment"></textarea>
+    <button type="submit" id="commentBtn">Submit</button>
+  </form>
 </section>
 
 <script src="/js/comment.js"></script>

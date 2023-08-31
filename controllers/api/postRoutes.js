@@ -2,8 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment} = require('../../models');
 
 // Get Posts
-// Get title, contents, post creator's username, and date created
-// example 23-ins-auth_review
+
 router.get('/', async (req,res) => {
 
     try{ 

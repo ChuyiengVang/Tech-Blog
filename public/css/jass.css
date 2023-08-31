@@ -10,6 +10,12 @@ a {
 
 }
 
+p {
+
+    font-size: 18px;
+
+}
+
 header {
 
     background-color: brown;
@@ -52,7 +58,7 @@ header {
 
 }
 
-.loginForm {
+.loginForm, .signupForm {
 
     display: flex;
     justify-content: center;
