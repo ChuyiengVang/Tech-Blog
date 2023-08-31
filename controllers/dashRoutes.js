@@ -15,7 +15,7 @@ router.get('/', withAuth, async (req, res) => {
                     model: Comment
                 }],
         });
-
+ 
         const userPosts = postData.map((data) => data.get({ plain: true}));
         
         res.render('dashboard', {
