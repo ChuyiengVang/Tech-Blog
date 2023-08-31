@@ -1,5 +1,11 @@
 # Tech-Blog
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A CMS-style blog site where developers can publish their blog posts and comment on other developer's posts as well
+
+![Screenshot 2023-08-30 211750](https://github.com/ChuyiengVang/Tech-Blog/assets/124082784/1983683e-2120-4a6e-845d-7f38abbe472d)
+![Screenshot 2023-08-30 211823](https://github.com/ChuyiengVang/Tech-Blog/assets/124082784/31d1a555-fc01-4d90-82bb-2379727cb3aa)
 
 ## About
 
