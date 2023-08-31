@@ -1,11 +1,11 @@
   <!-- dashboard handlbars-->
-  <h2>Dashboard</h2>
-  <section>
+  <h2 class="dashTitle">Dashboard</h2>
+  <section class="userPostSection">
       {{#each userPosts as |post|}}
-      <a href="/dashboard/edit/{{id}}" class="userPosts">
+      <a href="/dashboard/edit/{{id}}" class="userPosts" >
           <div class="userPostData">
               <h3>{{title}}</h3>
-              <h3>{{format_date}}</h3>
+              <h3>{{format_date createdAt}}</h3>
           </div>
       </a>
       {{/each}}
@@ -13,4 +13,3 @@
   <div class="botBtn">
       <a href="/dashboard/create">New Post</a>
   </div>
-</body>

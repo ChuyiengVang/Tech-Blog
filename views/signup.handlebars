@@ -1,18 +1,19 @@
 <!-- sign up handlbars-->
-<form class="signupForm">
-  <h2>Sign Up</h2>
-  <div>
+<form class="loginForm">
+  <div class="loginBox">
+  <h2 class="loginTitle">Sign Up</h2>
+  <div class="formInputs">
     <label for="user-name">username:</label>
     <input class="form-input" type="text" id="userSignup"/>
   </div>
-  <div>
+  <div class="formInputs">
     <label for="password-login">password:</label>
     <input class="form-input" type="password" id="passwordSignup"/> 
   </div>
-  <div>
+  <div class="formBtns">
     <button class="signUpBtn" type="submit">Sign Up</button>
+    <a href="/login" id="signUpBtn">Login</a>
   </div>
-  <a href="/login">Login</a>
 </form>
 
 <script src="/js/signup.js"></script>

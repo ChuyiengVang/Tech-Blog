@@ -1,12 +1,12 @@
   <!-- home page handlbars-->
-  <section>
+  <section class="postSection">
     {{#each userPosts as |post|}}
       <a class="posts" href="/post/{{id}}">
           <div class="postInfo">
             <h2>{{title}}</h2>
-            <h2>Posted by {{user.username}}</h2>
+            <h2 class="postUserDate">Posted by {{user.username}} on {{format_date createdAt}}</h2>
           </div>
-          <div>
+          <div class="postContent">
               <p>
                   {{content}}
               </p>

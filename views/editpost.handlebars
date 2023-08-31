@@ -1,15 +1,17 @@
 <!-- edit post handlbars-->
-<h3>Edit Post</h3>
+<h3 class="editTitle">Edit Post</h3>
 <!-- Find correct post, insert into label??-->
-<section>
+<section class="editSection">
     <form class="editForm">
         <div id="findId" dataId="{{userPost.id}}"></div>
-        <label for="editPTitle">Title</label>
+        <label for="editPTitle" class="postEditTitle">Title</label>
         <input type="text" name="Title" id="editPTitle" value="{{userPost.title}}">
-        <label for="editPContent">Content</label>
-        <input type="text" name="Content" id="editPContent" value="{{userPost.content}}">
-        <button id="updateBtn" type="submit">Update Post</button>
-        <button id="deleteBtn" type="submit">Delete</button>
+        <label for="editPContent" class="postContentTitle">Content</label>
+        <textarea name="Content" id="editPContent" value="{{userPost.content}}">{{userPost.content}}</textarea>
+        <div class="edtiBtns">
+            <button class="updateBtn" type="submit">Update Post</button>
+            <button class="deleteBtn" type="submit">Delete</button>
+        </div>
     </form>
 </section>
 

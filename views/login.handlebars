@@ -1,18 +1,20 @@
 <!-- login handlbars-->
 <form class="loginForm">
-  <h2>Login</h2>
-  <div>
+  <div class="loginBox">
+  <h2 class="loginTitle">Login</h2>
+  <div class="formInputs">
     <label for="userLogin">username:</label>
     <input class="form-input" type="text" id="userLogin"/>
   </div>
-  <div>
+  <div class="formInputs">
     <label for="passwordLogin">password:</label>
     <input class="form-input" type="password" id="passwordLogin"/> 
   </div>
-  <div>
+  <div class="formBtns">
     <button class="loginBtn" type="submit">login</button>
+    <a href="/signup" id="signUpBtn">Sign Up</a>
   </div>
-  <a href="/signup">Sign Up</a>
+  </div>
 </form>
 
 <script src="/js/login.js"></script>

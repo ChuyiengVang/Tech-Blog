@@ -1,11 +1,12 @@
-const editPostHandler = async (event) => {
+const deletePostHandler = async (event) => {
     event.preventDefault();
 
     const idEl = document.querySelector('#findId');
     const dataId = idEl.getAttribute('dataId');
 
     const response = await fetch(`/api/post/${dataId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
@@ -16,4 +17,4 @@ const editPostHandler = async (event) => {
     
 };
 
-document.getElementById('deleteBtn').addEventListener('submit', editPostHandler);
+document.querySelector('.deleteBtn').addEventListener('click', deletePostHandler);

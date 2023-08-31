@@ -8,7 +8,14 @@ router.get('/', async (req,res) => {
 
     try{ 
         const postData = await Post.findAll({
-            include : [{model: User}, {model: Comment}],
+            order: ['date'],
+            include : [
+              {
+                model: User
+              }, 
+              {
+                model: Comment
+              }],
         });
       res.status(200).json(postData);
     } catch  (err) {

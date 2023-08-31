@@ -12,7 +12,8 @@ router.get('/', async (req, res) => {
           }, 
           {
             model: Comment
-          }],
+          }
+        ],
       });
       res.status(200).json(userData);
     } catch (err) {
@@ -28,7 +29,13 @@ router.get('/:id', async (req, res) =>{
   try {
     const userData = await User.findByPk(req.params.id, {
     attributes: { exclude: ['password']},
-    includes: [{model: Post}, {model: Comment}],
+    includes: [
+      {
+        model: Post
+      }, 
+      {
+        model: Comment
+      }],
   });
   res.status(200).json(userData);
   } catch (err) {
@@ -69,9 +76,11 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
-
+    const validPassword = userData.checkPassword(req.body.password);
+      
     if (!validPassword) {
+      console.log(req.body.password)
+      console.log(validPassword)
       res.status(500).json({ message: 'Incorrect password, please try again'});
         return;
     }
