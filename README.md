@@ -68,6 +68,9 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
   ## Usage
 
+  Link to app
+  https://polar-waters-57489-86a7d07b6e21.herokuapp.com/
+
    
   ## Installation
 
